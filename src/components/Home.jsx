@@ -38,7 +38,7 @@ function Home() {
         width={width}
       >
         <Box className="name-container">
-          <Devin currentColor="blackAlpha.900" w={width / 2} />
+          <Devin currentcolor="blackAlpha.900" w={width / 2} />
         </Box>
       </VStack>
       <Box position="absolute" top={height - 1}>

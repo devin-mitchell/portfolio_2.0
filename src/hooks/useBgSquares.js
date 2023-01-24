@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useWindowSize from "./useWindowSize";
 
-const CELL_SIZE = 30;
+const CELL_SIZE = 50;
 
 function useBgSquares() {
   const { height, width } = useWindowSize();
