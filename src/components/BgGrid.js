@@ -27,7 +27,7 @@ function BgGrid({ setIsFinished }) {
       }),
       borderRadius: "50%",
       scale: 0,
-      delay: anime.stagger(80, { grid: [columns, rows], from: "center" }),
+      delay: anime.stagger(50, { grid: [columns, rows], from: "center" }),
       backgroundColor: "#39FF14",
       easing: "easeInOutQuad",
     }).finished.then(() => {
@@ -37,7 +37,7 @@ function BgGrid({ setIsFinished }) {
   const buttonAnimation = () =>
     anime({
       targets: "button",
-      rotate: "1turn",
+      rotate: "3turn",
       scale: [1, 2.5, 0],
       opacity: [1, 1, 0],
       easing: "easeInQuart",
@@ -77,8 +77,11 @@ function BgGrid({ setIsFinished }) {
         position="absolute"
         bg="#39FF14"
         onClick={() => handleClick()}
+        border="4px solid black"
         borderRadius={"50%"}
         _hover={{ bg: "#00C500" }}
+        fontSize="2xl"
+        fontFamily="serif"
       >
         ENTER
       </Button>
