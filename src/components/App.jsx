@@ -22,8 +22,6 @@ function App() {
     >
       {!isFinished && <BgGrid setIsFinished={setIsFinished} />}
       {isFinished && <Home />}
-      {isFinished && <Projects />}
-      {isFinished && <About />}
     </VStack>
   );
 }

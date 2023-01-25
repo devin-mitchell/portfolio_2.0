@@ -2,6 +2,8 @@ import anime from "animejs";
 import { useEffect } from "react";
 import Devin from "../assets/Devin";
 import Goop from "../assets/Goop";
+import Projects from "./Projects";
+import About from "./About";
 import { Box, VStack } from "@chakra-ui/react";
 import useWindowSize from "../hooks/useWindowSize";
 
@@ -29,21 +31,23 @@ function Home() {
   return (
     <>
       <VStack
-        className="App"
-        position="relative"
+        spacing={0}
         justifyContent="center"
         alignItems="center"
-        background="blackAlpha.900"
+        position="relative"
+        bg="#000"
         height={height}
         width={width}
       >
         <Box className="name-container">
           <Devin currentcolor="blackAlpha.900" w={width / 2} />
         </Box>
+        <Box w="full" overflowX="hidden" position="absolute" top={height - 1}>
+          <Goop />
+        </Box>
       </VStack>
-      <Box position="absolute" top={height - 1}>
-        <Goop />
-      </Box>
+      <Projects />
+      <About />
     </>
   );
 }

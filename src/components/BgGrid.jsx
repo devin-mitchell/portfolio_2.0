@@ -1,9 +1,11 @@
 import { Button, Grid, GridItem } from "@chakra-ui/react";
 import useBgSquares from "../hooks/useBgSquares";
 import anime from "animejs";
+import { useNavigate } from "react-router-dom";
 
 function BgGrid({ setIsFinished }) {
   const { rows, columns, cellSize, totalSquares } = useBgSquares();
+  const navigate = useNavigate();
 
   const squares = document.getElementsByClassName("square");
 
@@ -31,6 +33,7 @@ function BgGrid({ setIsFinished }) {
       backgroundColor: "#39FF14",
       easing: "easeInOutQuad",
     }).finished.then(() => {
+      navigate("/home");
       setIsFinished(true);
     });
 

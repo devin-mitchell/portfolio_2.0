@@ -14,7 +14,7 @@ function Animation() {
     <mesh ref={knotRef} rotation-x={1}>
       <torusKnotGeometry args={[1.75, 0.5, 300, 20, 1, 2]} />
       <meshPhongMaterial
-        color="#39FF14"
+        color="#fff"
         specular="#39FF14"
         shininess={500}
         reflectivity={1}
