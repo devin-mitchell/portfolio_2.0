@@ -12,9 +12,9 @@ function Animation() {
 
   return (
     <mesh ref={knotRef} rotation-x={1}>
-      <torusKnotGeometry args={[1, 0.25, 300, 20, 1, 2]} />
+      <torusKnotGeometry args={[1.75, 0.5, 300, 20, 1, 2]} />
       <meshPhongMaterial
-        color="#fff"
+        color="#39FF14"
         specular="#39FF14"
         shininess={500}
         reflectivity={1}
@@ -25,7 +25,7 @@ function Animation() {
 
 function Knot() {
   return (
-    <Box w="full" h="100%">
+    <Box className="container" w="500px" h="500px">
       <Canvas>
         <Animation />
         <ambientLight intensity={0.05} />
