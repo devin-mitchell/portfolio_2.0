@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { HStack, Box, Button, Text } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
-
 import Project from "./Project";
 import CarouselItem from "./CarouselItem";
 import { positiveModulo } from "../utils/helpers";
@@ -83,6 +82,7 @@ function Carousel({ projects }) {
                 title={proj.title}
                 color={proj.color}
                 icon={proj.icon}
+                bullets={proj.bullets}
               />
             </CarouselItem>
           );
