@@ -11,7 +11,6 @@ function Project({ title, color, isCurrent, bullets }) {
 
     isCurrent &&
       setTimeout(() => {
-        console.log("TARGET: ", target);
         setRender(true);
         anime({
           targets: target,
@@ -45,7 +44,6 @@ function Project({ title, color, isCurrent, bullets }) {
         >
           {title}
         </Text>
-
         <VStack
           h="100%"
           w="full"
@@ -55,7 +53,7 @@ function Project({ title, color, isCurrent, bullets }) {
           {render &&
             bullets.map((bullet, i) => {
               return (
-                <HStack>
+                <HStack key={`${i}-${bullet.text.substring(0, 10)}`}>
                   <Center className="project-icon">
                     <Knot color={color} width="40px" height="40px" />
                   </Center>
