@@ -1,16 +1,16 @@
 import { Center, Link, Text, VStack } from "@chakra-ui/react";
 import Knot from "./Knot";
 
-function Project({ title, color }) {
+function Project({ title, color, isCurrent }) {
   return (
-    <VStack
-      h="100%"
-      w="full"
+    <Link
+      minH="100%"
+      minW="full"
       borderRadius="4rem"
       p={"1rem"}
       bg="blackAlpha.200"
     >
-      <Link src="">
+      <VStack>
         <Text
           textShadow={`3px 3px 0 ${color}`}
           fontSize="7xl"
@@ -19,12 +19,14 @@ function Project({ title, color }) {
         >
           {title}
         </Text>
-      </Link>
 
-      <Center className="project-icon" w="full" h="100%">
-        <Knot color={color} />
-      </Center>
-    </VStack>
+        {isCurrent && (
+          <Center className="project-icon" w="full" h="100%">
+            <Knot color={color} />
+          </Center>
+        )}
+      </VStack>
+    </Link>
   );
 }
 

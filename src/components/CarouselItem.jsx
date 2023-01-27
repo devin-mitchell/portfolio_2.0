@@ -45,21 +45,12 @@ function CarouselItem({
           ? `-${width / 2 + convertRemToPixels(30)}px`
           : 0
       }
-      transform={
-        isCurrent
-          ? "scale(1)"
-          : isPrevious || isNext
-          ? "scale(0.4)"
-          : isNone
-          ? "scale(0.1)"
-          : null
-      }
       opacity={isNext || isPrevious ? "0.5" : isNone ? "0" : 1}
       margin="auto"
       transition="all 1000ms"
       transitionTimingFunction="cubic-bezier(.76,-0.3,.04,1.34)"
-      w="40rem"
-      h="30rem"
+      w={isCurrent ? "40rem" : isNext || isPrevious ? "8rem" : "0rem"}
+      h={isCurrent ? "30rem" : isNext || isPrevious ? "8rem" : "0rem"}
     >
       {children}
     </Center>

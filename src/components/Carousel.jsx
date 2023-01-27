@@ -71,13 +71,19 @@ function Carousel({ projects }) {
 
           return (
             <CarouselItem
+              key={`${proj.title}-carousel-item`}
               isNext={isNext}
               isPrevious={isPrevious}
               isCurrent={isCurrent}
               isNone={isNone}
               proj={proj}
             >
-              <Project title={proj.title} color={proj.color} icon={proj.icon} />
+              <Project
+                isCurrent={isCurrent}
+                title={proj.title}
+                color={proj.color}
+                icon={proj.icon}
+              />
             </CarouselItem>
           );
         })}
