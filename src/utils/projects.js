@@ -20,7 +20,7 @@ export const PROJECTS = [
         text: "Integer nunc libero, tempus ac ultricies sit amet, maximus eu diam. Nulla in nisl ut tellus pulvinar fermentum non a orci. Etiam ut.",
       },
     ],
-    bulletIcon: <Ball />,
+    bulletIcon: <Knot color="#FF0" width="40px" height="40px" />,
   },
   {
     index: 2,
