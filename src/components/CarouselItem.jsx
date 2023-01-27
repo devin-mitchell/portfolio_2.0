@@ -45,7 +45,6 @@ function CarouselItem({
           ? `-${width / 2 + convertRemToPixels(30)}px`
           : 0
       }
-      border={isPrevious ? "10px solid green" : null}
       transform={
         isCurrent
           ? "scale(1)"
