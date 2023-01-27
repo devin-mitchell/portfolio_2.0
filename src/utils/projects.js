@@ -1,3 +1,6 @@
+import Ball from "../components/Ball";
+import Knot from "../components/Knot";
+
 export const PROJECTS = [
   {
     index: 1,
@@ -17,6 +20,7 @@ export const PROJECTS = [
         text: "Integer nunc libero, tempus ac ultricies sit amet, maximus eu diam. Nulla in nisl ut tellus pulvinar fermentum non a orci. Etiam ut.",
       },
     ],
+    bulletIcon: <Ball />,
   },
   {
     index: 2,
@@ -36,6 +40,7 @@ export const PROJECTS = [
         text: "Integer nunc libero, tempus ac ultricies sit amet, maximus eu diam. Nulla in nisl ut tellus pulvinar fermentum non a orci. Etiam ut.",
       },
     ],
+    bulletIcon: <Ball />,
   },
   {
     index: 3,
@@ -55,6 +60,7 @@ export const PROJECTS = [
         text: "Integer nunc libero, tempus ac ultricies sit amet, maximus eu diam. Nulla in nisl ut tellus pulvinar fermentum non a orci. Etiam ut.",
       },
     ],
+    bulletIcon: <Knot color={"#6A0DAD"} width="40px" height="40px" />,
   },
   {
     index: 4,
@@ -74,6 +80,7 @@ export const PROJECTS = [
         text: "Integer nunc libero, tempus ac ultricies sit amet, maximus eu diam. Nulla in nisl ut tellus pulvinar fermentum non a orci. Etiam ut.",
       },
     ],
+    bulletIcon: <Ball />,
   },
   {
     index: 5,
@@ -93,5 +100,6 @@ export const PROJECTS = [
         text: "Integer nunc libero, tempus ac ultricies sit amet, maximus eu diam. Nulla in nisl ut tellus pulvinar fermentum non a orci. Etiam ut.",
       },
     ],
+    bulletIcon: <Knot color={"#FF69B4"} width="40px" height="40px" />,
   },
 ];

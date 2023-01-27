@@ -83,6 +83,7 @@ function Carousel({ projects }) {
                 color={proj.color}
                 icon={proj.icon}
                 bullets={proj.bullets}
+                bulletIcon={proj.bulletIcon}
               />
             </CarouselItem>
           );

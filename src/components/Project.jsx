@@ -3,7 +3,7 @@ import anime from "animejs";
 import { useEffect, useState } from "react";
 import Knot from "./Knot";
 
-function Project({ title, color, isCurrent, bullets }) {
+function Project({ title, color, isCurrent, bullets, bulletIcon }) {
   const [render, setRender] = useState(false);
 
   useEffect(() => {
@@ -54,9 +54,7 @@ function Project({ title, color, isCurrent, bullets }) {
             bullets.map((bullet, i) => {
               return (
                 <HStack key={`${i}-${bullet.text.substring(0, 10)}`}>
-                  <Center className="project-icon">
-                    <Knot color={color} width="40px" height="40px" />
-                  </Center>
+                  <Center className="project-icon">{bulletIcon}</Center>
                   <Text>{bullet.text}</Text>
                 </HStack>
               );
