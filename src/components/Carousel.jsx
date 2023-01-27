@@ -1,7 +1,11 @@
-import { HStack, Box, Button, Center } from "@chakra-ui/react";
 import { useState } from "react";
 
-const positiveModulo = (a, b) => ((a % b) + b) % b;
+import { HStack, Box, Button, Text } from "@chakra-ui/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+
+import Project from "./Project";
+import CarouselItem from "./CarouselItem";
+import { positiveModulo } from "../utils/helpers";
 
 function Carousel({ projects }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,10 +23,46 @@ function Carousel({ projects }) {
   return (
     <>
       <HStack>
-        <Button onClick={() => handleClick("previous")}>PREVIOUS</Button>
-        <Button onClick={() => handleClick("next")}>NEXT</Button>
+        <Button
+          w="10rem"
+          color="whiteAlpha.900"
+          boxShadow={`3px 3px 3px ${projects[previous].color}`}
+          bg="blackAlpha.900"
+          onClick={() => handleClick("previous")}
+          _hover={{
+            background: "whiteAlpha.700",
+            color: "blackAlpha.900",
+            border: "1px solid #000",
+          }}
+          _active={{
+            transform: "scale(0.99)",
+            boxShadow: `1px 1px 0px ${projects[previous].color}`,
+          }}
+        >
+          <ChevronLeftIcon fontSize={"5xl"} />
+          <Text fontSize={"md"}>PREVIOUS</Text>
+        </Button>
+        <Button
+          w="10rem"
+          color="whiteAlpha.900"
+          bg="blackAlpha.900"
+          boxShadow={`3px 3px 3px ${projects[next].color}`}
+          onClick={() => handleClick("next")}
+          _hover={{
+            background: "whiteAlpha.700",
+            color: "blackAlpha.900",
+            border: "1px solid #000",
+          }}
+          _active={{
+            transform: "scale(0.99)",
+            boxShadow: `1px 1px 0px ${projects[next].color}`,
+          }}
+        >
+          <Text fontSize={"md"}>NEXT</Text>
+          <ChevronRightIcon fontSize={"5xl"} />
+        </Button>
       </HStack>
-      <Box overflowX="hidden" h="80%" w="full" spacing={0} position="relative">
+      <Box overflowX="hidden" h="90%" w="full" position="relative">
         {projects.map((proj, i) => {
           const isCurrent = i === current;
           const isNext = i === next;
@@ -30,40 +70,15 @@ function Carousel({ projects }) {
           const isNone = i !== current && i !== next && i !== previous;
 
           return (
-            <Center
-              key={`carousel-${proj.title}`}
-              className={
-                isCurrent
-                  ? "current"
-                  : isNext
-                  ? "next"
-                  : isPrevious
-                  ? "previous"
-                  : "hidden"
-              }
-              position="absolute"
-              top={0}
-              bottom={0}
-              left={isCurrent ? 0 : isNext ? "66%" : isPrevious ? 0 : 0}
-              right={isCurrent ? 0 : isPrevious ? "66%" : isNext ? 0 : 0}
-              transform={
-                isCurrent
-                  ? "scale(1)"
-                  : isPrevious || isNext
-                  ? "scale(0.4)"
-                  : isNone
-                  ? "scale(0.1)"
-                  : null
-              }
-              opacity={isNone ? 0 : 1}
-              margin="auto"
-              transition="all 1000ms"
-              transitionTimingFunction="cubic-bezier(.76,-0.3,.04,1.34)"
-              w="40rem"
-              h="30rem"
+            <CarouselItem
+              isNext={isNext}
+              isPrevious={isPrevious}
+              isCurrent={isCurrent}
+              isNone={isNone}
+              proj={proj}
             >
-              {proj.component}
-            </Center>
+              <Project title={proj.title} color={proj.color} icon={proj.icon} />
+            </CarouselItem>
           );
         })}
       </Box>
