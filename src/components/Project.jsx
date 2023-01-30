@@ -1,13 +1,12 @@
 import { Center, HStack, Link, Text, VStack } from "@chakra-ui/react";
 import anime from "animejs";
 import { useEffect, useState } from "react";
-import Knot from "./Knot";
 
 function Project({
+  link,
   title,
   isNone,
   color,
-  link,
   isCurrent,
   bullets,
   bulletIcon,
@@ -33,7 +32,8 @@ function Project({
 
   return (
     <Link
-      pointerEvents={isNone && "none"}
+      pointerEvents={isNone ? "none" : "auto"}
+      href={link}
       isExternal
       h="100%"
       minW="full"
