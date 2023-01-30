@@ -3,7 +3,15 @@ import anime from "animejs";
 import { useEffect, useState } from "react";
 import Knot from "./Knot";
 
-function Project({ title, color, isCurrent, bullets, bulletIcon }) {
+function Project({
+  title,
+  isNone,
+  color,
+  link,
+  isCurrent,
+  bullets,
+  bulletIcon,
+}) {
   const [render, setRender] = useState(false);
 
   useEffect(() => {
@@ -25,6 +33,8 @@ function Project({ title, color, isCurrent, bullets, bulletIcon }) {
 
   return (
     <Link
+      pointerEvents={isNone && "none"}
+      isExternal
       h="100%"
       minW="full"
       borderRadius="4rem"
