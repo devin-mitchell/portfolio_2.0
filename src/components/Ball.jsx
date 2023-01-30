@@ -18,8 +18,8 @@ function Animation() {
   const ballRef = useRef();
 
   useFrame(({ clock }) => {
-    ballRef.current.rotation.x = clock.getElapsedTime() / 2;
-    ballRef.current.rotation.y = clock.getElapsedTime() / 2;
+    ballRef.current.rotation.x = clock.getElapsedTime();
+    ballRef.current.rotation.y = clock.getElapsedTime() / 8;
   });
 
   return (
@@ -36,7 +36,7 @@ function Animation() {
   );
 }
 
-function Ball({ height = "2rem", width = "2rem" }) {
+function Ball({ height = "30rem", width = "30rem" }) {
   return (
     <Box h={height} w={width}>
       <Canvas>
