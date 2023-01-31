@@ -28,7 +28,7 @@ function About() {
       spacing={"4rem"}
       w="full"
       bg="papayawhip"
-      pt={"5rem"}
+      py={"5rem"}
       position="relative"
     >
       <VStack w="full" alignItems="flex-start">
