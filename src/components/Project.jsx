@@ -45,7 +45,7 @@ function Project({
         bg: `${isCurrent ? "blackAlpha.400" : "blackAlpha.900"}`,
       }}
     >
-      <VStack justifyContent="space-between" h="100%">
+      <VStack pb="2rem" px="1rem" justifyContent="space-between" h="100%">
         <Text
           textShadow={`3px 3px 0 ${color}`}
           fontSize="7xl"
@@ -59,6 +59,7 @@ function Project({
           w="full"
           spacing="1.5rem"
           overflowY={isCurrent ? "scroll" : "hidden"}
+          alignItems="flex-start"
         >
           {render &&
             bullets.map((bullet, i) => {

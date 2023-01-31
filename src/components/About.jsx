@@ -44,7 +44,6 @@ function About() {
       <VStack w="full" alignItems="flex-start">
         <Text
           zIndex={100}
-          textShadow={`3px 3px 0 #34FF15`}
           fontSize="7xl"
           fontFamily="Anton"
           color="blackAlpha.900"
@@ -71,7 +70,6 @@ function About() {
       <VStack w="full" alignItems="flex-start">
         <Text
           zIndex={100}
-          textShadow={`3px 3px 0 #06FDFD`}
           fontSize="7xl"
           fontFamily="Anton"
           color="blackAlpha.900"
@@ -111,7 +109,6 @@ function About() {
       <VStack w="full" alignItems="flex-start">
         <Text
           zIndex={100}
-          textShadow={`3px 3px 0 #FF69B4`}
           fontSize="7xl"
           fontFamily="Anton"
           color="blackAlpha.900"
@@ -136,7 +133,6 @@ function About() {
       <VStack w="full" alignItems="flex-start">
         <Text
           zIndex={100}
-          textShadow={`3px 3px 0 #FF0`}
           fontSize="7xl"
           fontFamily="Anton"
           color="blackAlpha.900"
@@ -157,12 +153,33 @@ function About() {
             isExternal
             href="https://www.linkedin.com/in/devin-mitchell100/"
           >
-            <Icon fontSize={"3rem"} as={GrLinkedin} />
+            <Icon
+              _hover={{
+                transform: "scale(1.2)",
+                transition: "all 150ms ease-in-out",
+              }}
+              fontSize={"3rem"}
+              as={GrLinkedin}
+            />
           </Link>
           <Link isExternal href="https://github.com/devin-mitchell">
-            <Icon fontSize={"3rem"} as={GrGithub} />
+            <Icon
+              _hover={{
+                transform: "scale(1.2)",
+                transition: "all 150ms ease-in-out",
+              }}
+              fontSize={"3rem"}
+              as={GrGithub}
+            />
           </Link>
-          <Link isExternal href="mailto:devin.a.mitchell@gmail.com">
+          <Link
+            _hover={{
+              transform: "scale(1.2)",
+              transition: "all 150ms ease-in-out",
+            }}
+            isExternal
+            href="mailto:devin.a.mitchell@gmail.com"
+          >
             <Icon fontSize={"3rem"} as={GrMail} />
           </Link>
         </HStack>
