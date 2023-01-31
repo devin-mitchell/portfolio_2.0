@@ -5,20 +5,24 @@ import { Box } from "@chakra-ui/react";
 import { Canvas } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 
-function Animation() {
-  const [colorMap, displacementMap, normalDxMap, normalGlMap, roughnessMap] =
-    useLoader(TextureLoader, [
+function Animation({ moveUp }) {
+  const [colorMap, displacementMap, normalDxMap, roughnessMap] = useLoader(
+    TextureLoader,
+    [
       "Tiles074_2K-JPG/Tiles074_2K_Color.jpg",
       "Tiles074_2K-JPG/Tiles074_2K_Displacement.jpg",
       "Tiles074_2K-JPG/Tiles074_2K_NormalDX.jpg",
       "Tiles074_2K-JPG/Tiles074_2K_NormalGL.jpg",
       "Tiles074_2K-JPG/Tiles074_2K_Roughness.jpg",
-    ]);
+    ]
+  );
 
   const ballRef = useRef();
 
   useFrame(({ clock }) => {
-    ballRef.current.rotation.x = clock.getElapsedTime();
+    ballRef.current.rotation.x = moveUp
+      ? -clock.getElapsedTime()
+      : clock.getElapsedTime();
     ballRef.current.rotation.y = clock.getElapsedTime() / 8;
   });
 
@@ -36,11 +40,11 @@ function Animation() {
   );
 }
 
-function Ball({ height = "30rem", width = "30rem" }) {
+function Ball({ moveUp, height = "30rem", width = "30rem" }) {
   return (
     <Box h={height} w={width}>
       <Canvas>
-        <Animation />
+        <Animation moveUp={moveUp} />
         <ambientLight intensity={0.05} />
         <directionalLight position={[1, 15, 5]} />
       </Canvas>

@@ -7,12 +7,22 @@ import Ball from "./Ball";
 import anime from "animejs";
 
 function About() {
-  const target = document.getElementsByClassName("ball-about");
+  const leftTarget = document.getElementsByClassName("ball-about-left");
+  const rightTarget = document.getElementsByClassName("ball-about-right");
 
   useEffect(() => {
     anime({
-      targets: target,
+      targets: leftTarget,
       translateY: 4000,
+      translateX: [{ value: 10 }, { value: 0 }, { value: -50 }],
+      duration: 20000,
+      loop: true,
+      easing: "linear",
+    });
+
+    anime({
+      targets: rightTarget,
+      translateY: -4000,
       translateX: [{ value: 10 }, { value: 0 }, { value: -50 }],
       duration: 20000,
       loop: true,
@@ -157,8 +167,16 @@ function About() {
           </Link>
         </HStack>
       </VStack>
-      <Box className="ball-about" position="absolute" top={-1000} left={0}>
+      <Box className="ball-about-left" position="absolute" top={-1000} left={0}>
         <Ball height="15rem" width="15rem" />
+      </Box>
+      <Box
+        className="ball-about-right"
+        position="absolute"
+        bottom={-1000}
+        right={0}
+      >
+        <Ball height="15rem" width="15rem" moveUp />
       </Box>
     </VStack>
   );
