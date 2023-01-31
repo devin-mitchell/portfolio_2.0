@@ -45,7 +45,7 @@ function CarouselItem({
           ? `-${width / 2 + convertRemToPixels(30)}px`
           : 0
       }
-      opacity={isNext || isPrevious ? "0.5" : isNone ? "0" : 1}
+      opacity={isNext || isPrevious ? "0.6" : isNone ? "0" : 1}
       margin="auto"
       transition="all 1000ms"
       transitionTimingFunction="cubic-bezier(.76,-0.3,.04,1.34)"

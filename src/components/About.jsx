@@ -1,8 +1,10 @@
-import { Box, HStack, Divider, Text, VStack } from "@chakra-ui/react";
-import Knot from "./Knot";
+import { useEffect } from "react";
+
+import { Box, HStack, Text, VStack, Flex, Link, Icon } from "@chakra-ui/react";
+import { GrGithub, GrLinkedin, GrMail } from "react-icons/gr";
+
 import Ball from "./Ball";
 import anime from "animejs";
-import { useEffect } from "react";
 
 function About() {
   const target = document.getElementsByClassName("ball-about");
@@ -16,7 +18,7 @@ function About() {
       loop: true,
       easing: "linear",
     });
-  }, []);
+  });
 
   return (
     <VStack
@@ -47,7 +49,7 @@ function About() {
           px={"5rem"}
           w="full"
         >
-          I am a software engineer with two years experience in React,
+          I am a software engineer with most of my experience being in React,
           Typescript, and GraphQL. My passion for building UI's that, not only
           look good, but are easy to use, drives me to continuously improve my
           skills and stay up to date with industry trends. I am a strong problem
@@ -66,7 +68,7 @@ function About() {
         >
           SKILLS
         </Text>
-        <HStack
+        <Flex
           bg="blackAlpha.200"
           borderRadius={"2rem"}
           py={"2rem"}
@@ -94,7 +96,7 @@ function About() {
             <Text>Git</Text>
             <Text>VIM</Text>
           </VStack>
-        </HStack>
+        </Flex>
       </VStack>
       <VStack w="full" alignItems="flex-start">
         <Text
@@ -106,16 +108,20 @@ function About() {
         >
           EDUCATION
         </Text>
-        <Text
+        <VStack
           bg="blackAlpha.200"
           borderRadius={"2rem"}
+          alignItems="flex-start"
           py={"2rem"}
           fontSize="xl"
           px={"5rem"}
           w="full"
         >
-          SNOW COLLEGE
-        </Text>
+          <Text>
+            Bloomtech/Lambda School, Full Stack Web Development August 2021
+          </Text>
+          <Text>Snow College, Bachelor of Music April 2017</Text>
+        </VStack>
       </VStack>
       <VStack w="full" alignItems="flex-start">
         <Text
@@ -127,14 +133,29 @@ function About() {
         >
           CONTACT
         </Text>
-        <Text
+        <HStack
           bg="blackAlpha.200"
           borderRadius={"2rem"}
           py={"2rem"}
           fontSize="xl"
           px={"5rem"}
           w="full"
-        ></Text>
+          spacing={"3rem"}
+          justifyContent="center"
+        >
+          <Link
+            isExternal
+            href="https://www.linkedin.com/in/devin-mitchell100/"
+          >
+            <Icon fontSize={"3rem"} as={GrLinkedin} />
+          </Link>
+          <Link isExternal href="https://github.com/devin-mitchell">
+            <Icon fontSize={"3rem"} as={GrGithub} />
+          </Link>
+          <Link isExternal href="mailto:devin.a.mitchell@gmail.com">
+            <Icon fontSize={"3rem"} as={GrMail} />
+          </Link>
+        </HStack>
       </VStack>
       <Box className="ball-about" position="absolute" top={-1000} left={0}>
         <Ball height="15rem" width="15rem" />
