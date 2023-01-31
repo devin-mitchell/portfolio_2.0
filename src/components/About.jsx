@@ -32,8 +32,8 @@ function About() {
 
   return (
     <VStack
-      alignItems="flex-start"
-      px="20rem"
+      alignItems={["center", "center", "center", "flex-start"]}
+      px={["1rem", "2rem", "5rem", "20rem"]}
       overflow="hidden"
       spacing={"4rem"}
       w="full"
@@ -41,7 +41,10 @@ function About() {
       py={"5rem"}
       position="relative"
     >
-      <VStack w="full" alignItems="flex-start">
+      <VStack
+        w="full"
+        alignItems={["center", "center", "center", "flex-start"]}
+      >
         <Text
           zIndex={100}
           fontSize="7xl"
@@ -67,7 +70,10 @@ function About() {
         </Text>
       </VStack>
 
-      <VStack w="full" alignItems="flex-start">
+      <VStack
+        w="full"
+        alignItems={["center", "center", "center", "flex-start"]}
+      >
         <Text
           zIndex={100}
           fontSize="7xl"
@@ -77,6 +83,8 @@ function About() {
           SKILLS
         </Text>
         <Flex
+          direction={["column", "column", "row", "row"]}
+          justifyContent={["center", "center", "center", "space-between"]}
           bg="blackAlpha.200"
           borderRadius={"2rem"}
           py={"2rem"}
@@ -84,29 +92,32 @@ function About() {
           px={"5rem"}
           w="full"
         >
-          <VStack w="25%" h="100%">
+          <VStack>
             <Text>Typescript</Text>
             <Text>React.js</Text>
             <Text>React Native</Text>
           </VStack>
-          <VStack w="25%" h="100%">
+          <VStack>
             <Text>Next.js</Text>
             <Text>GraphQL</Text>
             <Text>Elixir</Text>
           </VStack>
-          <VStack w="25%" h="100%">
+          <VStack>
             <Text>Phoenix</Text>
             <Text>Python</Text>
             <Text>SQL</Text>
           </VStack>
-          <VStack w="25%" h="100%">
+          <VStack>
             <Text>PostgreSQL</Text>
             <Text>Git</Text>
             <Text>VIM</Text>
           </VStack>
         </Flex>
       </VStack>
-      <VStack w="full" alignItems="flex-start">
+      <VStack
+        w="full"
+        alignItems={["center", "center", "center", "flex-start"]}
+      >
         <Text
           zIndex={100}
           fontSize="7xl"
@@ -130,7 +141,10 @@ function About() {
           <Text>Snow College, Bachelor of Music April 2017</Text>
         </VStack>
       </VStack>
-      <VStack w="full" alignItems="flex-start">
+      <VStack
+        w="full"
+        alignItems={["center", "center", "center", "flex-start"]}
+      >
         <Text
           zIndex={100}
           fontSize="7xl"

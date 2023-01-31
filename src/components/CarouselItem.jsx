@@ -49,7 +49,13 @@ function CarouselItem({
       margin="auto"
       transition="all 1000ms"
       transitionTimingFunction="cubic-bezier(.76,-0.3,.04,1.34)"
-      w={isCurrent ? "40rem" : isNext || isPrevious ? "8rem" : "0rem"}
+      w={
+        isCurrent
+          ? ["80%", "80%", "40rem"]
+          : isNext || isPrevious
+          ? "8rem"
+          : "0rem"
+      }
       h={isCurrent ? "30rem" : isNext || isPrevious ? "8rem" : "0rem"}
     >
       {children}
