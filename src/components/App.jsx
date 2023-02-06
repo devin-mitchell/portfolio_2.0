@@ -2,9 +2,7 @@ import { useState } from "react";
 
 import { VStack } from "@chakra-ui/react";
 
-import Projects from "./Projects";
 import Home from "./Home";
-import About from "./About";
 import BgGrid from "./BgGrid";
 
 function App() {

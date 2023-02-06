@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
 import useWindowSize from "./useWindowSize";
 
-const CELL_SIZE = 50;
-
 function useBgSquares() {
   const { height, width } = useWindowSize();
+
+  const cellSize = width > 3000 ? Math.floor(width / 50) : 50;
 
   const [bgSquares, setBgSquares] = useState({
     columns: undefined,
     rows: undefined,
     totalSquares: undefined,
-    cellSize: CELL_SIZE,
+    cellSize: cellSize,
   });
 
   useEffect(() => {
-    const columnNumber = Math.floor(width / CELL_SIZE) + 1;
-    const rowNumber = Math.floor(height / CELL_SIZE) + 1;
+    const columnNumber = Math.floor(width / cellSize) + 1;
+    const rowNumber = Math.floor(height / cellSize) + 1;
 
     setBgSquares({
       columns: columnNumber,
       rows: rowNumber,
       totalSquares: columnNumber * rowNumber,
-      cellSize: CELL_SIZE,
+      cellSize: cellSize,
     });
-  }, [height, width]);
+  }, [cellSize, height, width]);
 
   return bgSquares;
 }

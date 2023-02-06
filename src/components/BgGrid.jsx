@@ -75,15 +75,15 @@ function BgGrid({ setIsFinished }) {
             })}
       </Grid>
       <Button
-        w={"8rem"}
-        h={"8rem"}
+        w={["8rem", "8rem", "10rem", "10rem"]}
+        h={["8rem", "8rem", "10rem", "10rem"]}
         position="absolute"
         bg="#39FF14"
         onClick={() => handleClick()}
         border="4px solid black"
         borderRadius={"50%"}
         _hover={{ bg: "#00C500" }}
-        fontSize="2xl"
+        fontSize={["2xl", "2xl", "3xl", "4xl"]}
         fontFamily="serif"
       >
         ENTER

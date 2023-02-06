@@ -42,7 +42,14 @@ function Home() {
         <Box className="name-container">
           <Devin currentcolor="blackAlpha.900" w={width / 2} />
         </Box>
-        <Box w="full" overflowX="hidden" position="absolute" top={height - 1}>
+        <Box
+          w="full"
+          overflowX="hidden"
+          position="absolute"
+          top={height - 1}
+          display="flex"
+        >
+          <Goop />
           <Goop />
         </Box>
       </VStack>
